@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DateDisplayComponent } from './date-display/date-display.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DateDisplayComponent,
   ],
   imports: [
     BrowserModule,
