@@ -1,0 +1,18 @@
+<p>user-component works!</p>
+<div *ngIf="showContent; else noContent">
+  <p>This content is displayed because showContent is true.</p>
+</div>
+<ng-template #noContent>
+  <p>No content is displayed because showContent is false.</p>
+</ng-template>
+
+<ul>
+  <li *ngFor="let item of items">{{ item }}</li>
+</ul>
+
+<div [ngSwitch]="status">
+  <p *ngSwitchCase="'active'">The status is active.</p>
+  <p *ngSwitchCase="'inactive'">The status is inactive.</p>
+  <p *ngSwitchDefault>The status is unknown.</p>
+</div>
+<p>{{ someDynamicData | userPipe }}</p>
