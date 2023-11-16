@@ -1,4 +1,4 @@
-<p>user-component works!</p>
+<!-- <p>user-component works!</p>
 <div *ngIf="showContent; else noContent">
   <p>This content is displayed because showContent is true.</p>
 </div>
@@ -15,4 +15,23 @@
   <p *ngSwitchCase="'inactive'">The status is inactive.</p>
   <p *ngSwitchDefault>The status is unknown.</p>
 </div>
-<p>{{ someDynamicData | userPipe }}</p>
+<p>{{ someDynamicData | userPipe }}</p> -->
+
+<h5>User's list</h5>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{user.fName+" "+user.lName}}</td>
+        <td>{{user.email}}</td>
+       
+      </tr>
+    </tbody>
+  </table>

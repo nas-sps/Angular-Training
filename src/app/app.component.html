@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{title}}</title>
 </head>
+
 <body>
-  <div class = "b1" style="text-align:center">
+  <app-about></app-about>
+  <!-- <div class = "b1" style="text-align:center">
     <h1>
       Welcome to My Date App!
     </h1>
@@ -14,6 +17,14 @@
     <h2>{{title}}</h2>
     <app-date-display></app-date-display>
     <app-user-component></app-user-component>
+  </div> -->
+  <div class="b1" style="text-align:center">
+    <app-home></app-home>
   </div>
+  <!-- <div class="b2" style="text-align:center">
+    <button type="button">Click</button>
+  </div> -->
+  <router-outlet></router-outlet>
 </body>
+
 </html>

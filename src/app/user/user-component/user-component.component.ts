@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,Input} from '@angular/core';
 
 @Component({
   selector: 'app-user-component',
@@ -6,8 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-component.component.css']
 })
 export class UserComponentComponent {
-  showContent: boolean = true;
-  items: string[] = ['Item 1', 'Item 2', 'Item 3'];
-  status: string = 'active'; // You can change this value to test ngSwitch
-  someDynamicData: string = "Dynamic data here";
+  @Input() users: any;
+  // showContent: boolean = true;
+  // items: string[] = ['Item 1', 'Item 2', 'Item 3'];
+  // status: string = 'active'; // You can change this value to test ngSwitch
+  // someDynamicData: string = "Dynamic data here";
 }

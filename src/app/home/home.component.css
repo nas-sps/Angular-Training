@@ -1,0 +1,13 @@
+.Container{
+    height: 92.5vh;
+    display: grid;
+    grid-template-columns: 35% 1fr;
+    gap: 1%;
+    margin-top: 15px;
+}
+
+.productForm , .productList{
+/* background-color: antiquewhite; */
+padding: 5%;
+margin-top: 10%;
+}
