@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <app-about></app-about>
+  <!-- <app-about></app-about> -->
   <!-- <div class = "b1" style="text-align:center">
     <h1>
       Welcome to My Date App!
@@ -18,13 +18,26 @@
     <app-date-display></app-date-display>
     <app-user-component></app-user-component>
   </div> -->
-  <div class="b1" style="text-align:center">
+  <!-- <div class="b1" style="text-align:center">
     <app-home></app-home>
-  </div>
+  </div> -->
   <!-- <div class="b2" style="text-align:center">
     <button type="button">Click</button>
   </div> -->
-  <router-outlet></router-outlet>
+  <!-- <router-outlet></router-outlet> -->
+  <div style="background-color: antiquewhite; display: flex;justify-content: space-around; padding: 20px;">
+    <button routerLink = "home">Home</button>
+    <button routerLink = "about">About</button>
+    <button routerLink = "products">Products</button>
+    <button routerLink = "user">Users</button>
+    <button routerLink = "dateDisplay">Date Display</button>
+  </div>
+  <div style="background-color: pink;">
+    <router-outlet></router-outlet>
+  </div>
+  <div>
+    <app-footer></app-footer>
+ </div>
 </body>
 
 </html>

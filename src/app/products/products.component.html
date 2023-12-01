@@ -1,0 +1,29 @@
+<p>products works!</p>
+
+<div class="search" style="padding: 8px;text-align: right;">
+    <input type="text" placeholder="Search" [(ngModel)]="searchByEmail" />
+  </div>
+
+<button (click) = "subs()">Subscribe</button>
+<button (click) = "getd()">Get data</button>
+
+<br>
+
+<div>
+    <ul>
+        <li *ngFor="let item of datas">{{ item }}</li>
+    </ul>
+</div>
+
+<!-- <div>
+    <ul>
+        <li *ngFor = "let item of responseData">{{ item.name }}</li>
+    </ul>
+</div> -->
+
+<div>
+   
+    <ul>
+        <li *ngFor = "let item of responseData | products: searchByEmail">{{ item.name }}</li>
+    </ul>
+</div>

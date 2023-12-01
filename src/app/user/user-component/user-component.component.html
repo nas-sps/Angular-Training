@@ -27,7 +27,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of users; let i = index">
+      <tr *ngFor="let user of users  let i = index">
         <td>{{i+1}}</td>
         <td>{{user.fName+" "+user.lName}}</td>
         <td>{{user.email}}</td>
