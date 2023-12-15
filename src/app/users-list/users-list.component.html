@@ -1,0 +1,36 @@
+<!-- <div *ngIf="showContent; else noContent">
+    <p>This content is displayed because showContent is true.</p>
+  </div>
+  <ng-template #noContent>
+    <p>No content is displayed because showContent is false.</p>
+  </ng-template>
+  
+  <ul>
+    <li *ngFor="let item of items">{{ item }}</li>
+  </ul>
+  
+  <div [ngSwitch]="status">
+    <p *ngSwitchCase="'active'">The status is active.</p>
+    <p *ngSwitchCase="'inactive'">The status is inactive.</p>
+    <p *ngSwitchDefault>The status is unknown.</p>
+  </div>
+  <p>{{ someDynamicData | userPipe }}</p>  -->
+  
+  <h5>User's list</h5>
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Full Name</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users  let i = index">
+          <td>{{i+1}}</td>
+          <td>{{user.fName+" "+user.lName}}</td>
+          <td>{{user.email}}</td>
+         
+        </tr>
+      </tbody>
+    </table>

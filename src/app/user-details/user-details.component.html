@@ -1,0 +1,46 @@
+
+<div class="loading" *ngIf="isLoading; else details">
+    <div class="loader"></div>
+    <h3>Loading...</h3>
+  </div>
+  <ng-template #details>
+    <div style="height: 85vh; display: flex;align-items: center;justify-content: space-around;">
+      <div class="user-details">
+        <h2>User Details</h2>
+        <div class="user-info">
+          <label>ID:</label>
+          <span>{{ userDetails.id }}</span>
+        </div>
+        <div class="user-info">
+          <label>Name:</label>
+          <span>{{ userDetails.name }}</span>
+        </div>
+        <div class="user-info">
+          <label>Username:</label>
+          <span>{{ userDetails.username }}</span>
+        </div>
+        <div class="user-info">
+          <label>Email:</label>
+          <span>{{ userDetails.email }}</span>
+        </div>
+        <div class="user-info">
+          <label>Address:</label>
+          <span>{{ userDetails.address?.street }}, {{ userDetails.address?.suite }}, {{ userDetails.address?.city }}, {{ userDetails.address?.zipcode }}</span>
+        </div>
+        <div class="user-info">
+          <label>Phone:</label>
+          <span>{{ userDetails.phone }}</span>
+        </div>
+        <div class="user-info">
+          <label>Website:</label>
+          <span>{{ userDetails.website }}</span>
+        </div>
+        <div class="user-info">
+          <label>Company:</label>
+          <span>{{ userDetails.company?.name }} - {{ userDetails.company?.catchPhrase }}</span>
+        </div>
+      </div> 
+    </div>
+    
+  </ng-template>
+  

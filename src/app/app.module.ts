@@ -10,7 +10,13 @@ import { FormsModule } from '@angular/forms';
 import { ProductsComponent } from './products/products.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-import {ProductsPipe} from './products/product.pipe'
+import {ProductsPipe} from './products/product.pipe';
+import { LoginComponent } from './login/login.component'
+import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { RouterModule } from '@angular/router';
+import { UsersListComponent } from './users-list/users-list.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +26,20 @@ import {ProductsPipe} from './products/product.pipe'
     AboutComponent,
     ProductsComponent,
     FooterComponent,
-    ProductsPipe
+    ProductsPipe,
+    LoginComponent,
+    HeaderComponent,
+    UserDetailsComponent,
+    UsersListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
