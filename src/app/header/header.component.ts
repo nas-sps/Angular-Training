@@ -9,8 +9,14 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   constructor(private router: Router) {}
 
-  logout() {
-    localStorage.removeItem('token');
-    this.router.navigate(['/login']);
+  loginDetails: any = {};
+
+  logout(): void {
+    localStorage.clear();
+    window.location.href="/";
+  }
+
+  ngOnInit(): void {
+    this.loginDetails = JSON.parse(localStorage.getItem('login') || '');
   }
 }

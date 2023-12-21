@@ -3,34 +3,36 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CallService } from '../services/call.service';
 import { Router } from '@angular/router';
 
+
+interface LOGIN_INTERFACE {
+  email: string;
+  password: string;
+  role: string;
+}
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit {
-  myCred!: FormGroup;
-  constructor(
-    private formBuilder: FormBuilder,
-    private call: CallService,
-    private router: Router
-  ) {}
 
-  ngOnInit() {
-    this.myCred = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
-    });
-  }
+export class LoginComponent {
+  constructor(private readonly router: Router) { }
 
-  onsubmit() {
-    let data = this.myCred.value;
+  loginDetails: LOGIN_INTERFACE = {
+    email: '',
+    password: '',
+    role: 'user',
+  };
 
-    this.call.login(data).subscribe((res) => {
-      console.log(res);
-      localStorage.setItem('token', res.token);
-      this.router.navigate(['/home']);
-    });
+  Login() {
+    const data = {
+      ...this.loginDetails,
+      login: true,
+    };
+
+    localStorage.setItem('login', JSON.stringify(data));
+    window.location.href = "/"
   }
 }
 

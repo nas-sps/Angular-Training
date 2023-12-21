@@ -8,6 +8,8 @@ import { UserComponentComponent } from './user/user-component/user-component.com
 import { LoginComponent } from './login/login.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UsersListComponent } from './users-list/users-list.component';
+import { RoleGuard } from './auth/role.guard';
+import { SalesComponent } from './sales/sales.component';
 
 
 const routes: Routes = [
@@ -31,6 +33,7 @@ const routes: Routes = [
   {
     path:"user",
     component: UserComponentComponent,
+    canActivate: [RoleGuard]
   },
   { path: 'login', 
     component: LoginComponent 
@@ -47,6 +50,10 @@ const routes: Routes = [
   {
     path: 'usersList',
     component: UsersListComponent
+  },
+  {
+    path: 'sales',
+    component: SalesComponent
   },
 
 ];

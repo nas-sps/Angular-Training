@@ -9,51 +9,24 @@
           />
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form [formGroup]="myCred">
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input
-                type="email"
-                id="form3Example3"
-                class="form-control form-control-lg"
-                placeholder="Enter a valid email address"
-                formControlName="email"
-              />
-              <label class="form-label" for="form3Example3">Email address</label>
+          <form (ngSubmit)="Login()">
+            <div style="margin-bottom: 15px;text-align: right;">
+              <label for="role" style="display: block; font-weight: bold;">Select role</label>
+              <select [(ngModel)]="loginDetails.role" name="role" style="padding: 5px; border-radius: 3px; border: 1px solid #ccc;">
+                <option value="user">user</option>
+                <option value="admin">admin</option>
+              </select>
             </div>
-  
-            <!-- Password input -->
-            <div class="form-outline mb-3">
-              <input
-                type="password"
-                id="form3Example4"
-                class="form-control form-control-lg"
-                placeholder="Enter password"
-                formControlName="password"
-              />
-              <label class="form-label" for="form3Example4">Password</label>
+            
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" [(ngModel)]="loginDetails.email" name="email" placeholder="Enter email">
             </div>
-  
-            <div class="d-flex justify-content-between align-items-center">
-              <!-- Checkbox -->
-              <div class="form-check mb-0"></div>
-              <a href="#!" class="text-body">Forgot password?</a>
-            </div>
-  
-            <div class="text-center text-lg-start mt-4 pt-2">
-              <button
-                type="button"
-                class="custom-button"
-                style="padding-left: 2.5rem; padding-right: 2.5rem"
-                (click)="onsubmit()"
-              >
-                Login
-              </button>
-              <p class="small fw-bold mt-2 pt-1 mb-0">
-                Don't have an account?
-                <a type="button" class="link-danger">Register</a>
-              </p>
-            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" [(ngModel)]="loginDetails.password" name="password" placeholder="Password">
+            </div><br>
+            <button type="submit" class="btn btn-primary btn-block btn-login" style="background-color: darkblue;">Login</button>
           </form>
         </div>
       </div>

@@ -1,0 +1,48 @@
+<h2>Products on Sale</h2>
+<div style="margin: 20px; display: flex;justify-content:space-around;">
+    <div>
+        <label for="role" style="display: block; font-weight: bold;">Search by title</label>
+        <input type="text" placeholder="Search by title" [(ngModel)]="titleFilter" [value]="titleFilter">
+
+    </div>
+    <div>
+        <label for="role" style="display: block; font-weight: bold;">Min Price</label>
+        <input type="number" placeholder="Min price" [(ngModel)]="minPriceFilter" [value]="minPriceFilter" min="1">
+    </div>
+    <div>
+        <label for="role" style="display: block; font-weight: bold;">Max Price</label>
+
+        <input type="number" placeholder="Max price" [(ngModel)]="maxPriceFilter" [value]="maxPriceFilter" min="100">
+    </div>
+    <button (click)="applyFilters()">Apply Filters</button>
+</div>
+<div class="loading" *ngIf="isLoading; else table">
+    <div class="loader"></div>
+    <h3>Loading...</h3>
+</div>
+
+<ng-template #table>
+    <div>
+
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of filteredProducts">
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.title }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.description }}</td>,
+                    <td>{{ product?.category?.name || 'N/A' }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</ng-template>

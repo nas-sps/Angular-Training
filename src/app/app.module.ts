@@ -17,6 +17,7 @@ import { HeaderComponent } from './header/header.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { RouterModule } from '@angular/router';
 import { UsersListComponent } from './users-list/users-list.component';
+import { SalesComponent } from './sales/sales.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UsersListComponent } from './users-list/users-list.component';
     LoginComponent,
     HeaderComponent,
     UserDetailsComponent,
-    UsersListComponent
+    UsersListComponent,
+    SalesComponent
   ],
   imports: [
     BrowserModule,

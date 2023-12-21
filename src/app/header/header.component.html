@@ -7,10 +7,25 @@
         <li class="px-4" routerLink="/user">Users</li>
         <!-- <li class="px-4" routerLink="/user-details">Users-Details</li> -->
         <li class="px-4" routerLink="/dateDisplay">Date Display</li>
+        <li class="px-4" routerLink="/sales">Sales</li>
       </div>
       <div>
         <ul class="flex cursor-pointer">
-          <li class="px-4" (click)="logout()">Logout</li>
+          <div>
+            <ng-container *ngIf="loginDetails && loginDetails.login; else login">
+              <div style="display: flex; gap: 15px">
+                <span style="color: white; font-weight: bold">{{
+                  loginDetails.email
+                }}</span>
+                <b style="cursor: pointer;" (click)="logout()">Logout</b>
+              </div>
+            </ng-container>
+            <ng-template #login>
+              <a routerLink="/login" style="color: white; text-decoration: none"
+                >Login</a
+              >
+            </ng-template>
+          </div>
         </ul>
       </div>
     </ul>
