@@ -9,7 +9,6 @@ import { LoginComponent } from './login/login.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { RoleGuard } from './auth/role.guard';
-import { SalesComponent } from './sales/sales.component';
 
 
 const routes: Routes = [
@@ -52,10 +51,9 @@ const routes: Routes = [
     component: UsersListComponent
   },
   {
-    path: 'sales',
-    component: SalesComponent
-  },
-
+    path:'sales',
+    loadChildren:()=>import("./shared-module/shared-module.module").then((m)=>m.SharedModuleModule)
+  }
 ];
 
 @NgModule({

@@ -17,7 +17,8 @@ import { HeaderComponent } from './header/header.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { RouterModule } from '@angular/router';
 import { UsersListComponent } from './users-list/users-list.component';
-import { SalesComponent } from './sales/sales.component';
+import { SharedModuleModule } from './shared-module/shared-module.module'
+
 
 @NgModule({
   declarations: [
@@ -32,7 +33,6 @@ import { SalesComponent } from './sales/sales.component';
     HeaderComponent,
     UserDetailsComponent,
     UsersListComponent,
-    SalesComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +42,7 @@ import { SalesComponent } from './sales/sales.component';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule,
+    SharedModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
